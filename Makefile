@@ -24,4 +24,4 @@ Sources/CCLISO8601DateFormatter/ISO8601DateFormatter.h:
 Sources/CCLISO8601DateFormatter/ISO8601DateFormatter.m:
 	@echo $@
 	@echo "// From $(SOURCE_URL_M)" > $@
-	@curl -L $(SOURCE_URL_M) >> $@
+	@curl -L $(SOURCE_URL_M) | sed 's/NSUndefinedDateComponent/NSDateComponentUndefined/g' >> $@
